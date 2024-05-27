@@ -1,0 +1,44 @@
+body {
+    background: linear-gradient(90deg, #9968c3, #ddb1ef);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+.container {
+    max-width: 900px;  
+    background-color: #fff;       
+}
+img {
+    max-width: 80%;
+    height: auto;
+}
+.btn{
+    background-color: #9968c3;
+    margin-left: 73px;
+    width: 200px;
+    color: #fff;
+}
+
+a{
+   color: #9a76c7;
+}
+
+
+.form-control {
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+    border-radius: 50px;
+    
+    border: none;
+}
+P, h3{
+    color: #747373;
+}
+
+ 
+

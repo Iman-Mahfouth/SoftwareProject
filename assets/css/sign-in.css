@@ -1,0 +1,30 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800;900&family=Major+Mono+Display&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    background: linear-gradient(90deg, #9968c3, #ddb1ef);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 900px;  
+    background-color: #fff;       
+}
+
+img {
+    max-width: 80%;
+    height: auto;
+}
+ 
+.btn{
+    background-color: #9968c3;
+    margin-left: 73px;
+    width: 200px;
+    color: #fff;
+}
+
+a{
+   color: #9a76c7;
+}
+h3{
+    color: #747373;
+}

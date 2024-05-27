@@ -1,0 +1,51 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+  }
+  
+  .modal-header, .modal-footer {
+    border: none;
+  }
+  
+  .modal-title {
+    margin-bottom: 0;
+  }
+  
+  .modal-body .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .modal-body .form-control:focus {
+    box-shadow: none;
+    border-bottom: 1px solid #f8f9fa;
+  }
+  
+  .modal-body .btn {
+    background: #ff5f7e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 20px;
+    color: white;
+    transition: background 0.3s;
+  }
+  
+  .modal-body .btn:hover {
+    background: #ff3b6e;
+  }
+  

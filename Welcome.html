@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Hub Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/Welcome.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logo.png" alt="Logo" class="logo">
+            Project Hup
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-custom" href="register.html" role="button">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-custom" href="sign-in.html" role="button">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h1 class="mt-5">Welcome to Project Hub Website</h1>
+        <a href="search.html" class="text-info">Search for Project</a>
+        
+        <!-- New Section with Cards -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="assets/img/online-education-concept-vector-42205482 (1).jpg" class="card-img-top" alt="Add Project">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Your Project</h5>
+                        <p class="card-text">You finished your graduation project or have any issues with it? No need to worry! share it with us! </p>
+                        <a href="newproject.html" class="btn btn-primary">Add Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="assets/img/distance-education-concept-vector-43189963.jpg" class="card-img-top" alt="Categories">
+                    <div class="card-body">
+                        <h5 class="card-title">Categories</h5>
+                        <p class="card-text">Here you can see all categories and add a new category!  If you are interested!</p>
+                        <a href="categories.html" class="btn btn-primary">View Categories</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2024 - Made By: Iman Mahfouth - <a href="#" class="text-info">Privacy</a>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

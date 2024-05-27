@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Hub Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/newproject.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="index.html">
+        <img src="assets/img/logo.png" alt="Logo" class="logo">
+        Project Hup
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Welcome.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-custom" href="register.html" role="button">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-custom" href="sign-in.html" role="button">Login</a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h1>Create A New Project</h1>
+    <button id="createNewButton" class="btn mb-3" data-toggle="modal" data-target="#createModal">Create New</button>
+    <div id="projectTableSection">
+      <div class="project-header">
+        <div class="row">
+          <div class="col-2">Title of the project</div>
+          <div class="col-3">Project description</div>
+          <div class="col-2">PDF</div>
+          <div class="col-2">Category</div>
+          <div class="col-2">Date of publish</div>
+          <div class="col-1">Actions</div>
+        </div>
+      </div>
+      <div class="project-body">
+        <!-- Sample Project 1 -->
+        <div class="row project-item">
+          <div class="col-2">Sample Project 1</div>
+          <div class="col-3">This is a sample project description.</div>
+          <div class="col-2"><a href="#" class="text-info" target="_blank">Open Project</a></div>
+          <div class="col-2">Art</div>
+          <div class="col-2">01/01/2023</div>
+          <div class="col-1">
+            <a href="#" class="text-warning" data-toggle="modal" data-target="#editModal" onclick="editProject(this)">Edit</a> |
+            <a href="#" class="text-info" data-toggle="modal" data-target="#detailsModal" onclick="viewDetails(this)">Details</a> |
+            <a href="#" class="text-danger" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteTarget(this)">Delete</a>
+          </div>
+        </div>
+        <!-- Sample Project 2 -->
+        <div class="row project-item">
+          <div class="col-2">Sample Project 2</div>
+          <div class="col-3">This is another sample project description.</div>
+          <div class="col-2"><a href="#" class="text-info" target="_blank">Open Project</a></div>
+          <div class="col-2">Science</div>
+          <div class="col-2">02/01/2023</div>
+          <div class="col-1">
+            <a href="#" class="text-warning" data-toggle="modal" data-target="#editModal" onclick="editProject(this)">Edit</a> |
+            <a href="#" class="text-info" data-toggle="modal" data-target="#detailsModal" onclick="viewDetails(this)">Details</a> |
+            <a href="#" class="text-danger" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteTarget(this)">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <!-- Create Modal -->
+  <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createModalLabel">Create New Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="createForm">
+            <div class="form-group">
+              <label for="newProjectTitle">Title of the project</label>
+              <input type="text" class="form-control" id="newProjectTitle" required>
+            </div>
+            <div class="form-group">
+              <label for="newProjectDescription">Project description</label>
+              <textarea class="form-control" id="newProjectDescription" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="newProjectPDF">Upload your project as PDF file</label>
+              <input type="file" class="form-control-file" id="newProjectPDF" accept="application/pdf" required>
+            </div>
+            <div class="form-group">
+              <label for="newProjectCategory">Category</label>
+              <select class="form-control" id="newProjectCategory" required>
+                <!-- Categories will be populated dynamically -->
+              </select>
+            </div>
+            <div id="createErrorMessage" class="text-danger" style="display: none;"></div>
+            <button type="submit" class="btn btn-primary">Create Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="editForm">
+              <div class="form-group">
+                <label for="editProjectTitle">Title of the project</label>
+                <input type="text" class="form-control" id="editProjectTitle" required>
+              </div>
+              <div class="form-group">
+                <label for="editProjectDescription">Project description</label>
+                <textarea class="form-control" id="editProjectDescription" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="editProjectPDF">Upload your project as PDF file</label>
+                <input type="file" class="form-control-file" id="editProjectPDF" accept="application/pdf">
+              </div>
+              <div class="form-group">
+                <label for="editProjectCategory">Category</label>
+                <select class="form-control" id="editProjectCategory" required>
+                  <!-- Categories will be populated dynamically -->
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Details Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="detailsModalLabel">Project Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Details will be populated dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete Project</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this project?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" id="confirmDelete" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <div class="footer">
+      © 2024 - Made By: Iman Mahfouth - <a href="#" class="text-info">Privacy</a>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/newproject.js"></script>
+  </body>
+  </html>
+  
